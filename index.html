@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.cloudflare.com https://cdn-cgi.cloudflare.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline' https://newassets.hcaptcha.com; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://unpkg.com https://hcaptcha.com https://*.hcaptcha.com https://synous.netlify.app; frame-src https://newassets.hcaptcha.com; frame-ancestors 'none'"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.cloudflare.com https://cdn-cgi.cloudflare.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline' https://newassets.hcaptcha.com; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://unpkg.com https://hcaptcha.com https://*.hcaptcha.com; frame-src https://newassets.hcaptcha.com; frame-ancestors 'none'"/>
 <meta http-equiv="X-Frame-Options" content="DENY"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()"/>
@@ -1259,13 +1259,12 @@ function init(){
       }
       var formData = new FormData(form);
       btn.disabled = true;
-      fetch('https://synous.netlify.app/', {
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
       })
-      .then(function(response) {
-        if (!response.ok) { throw new Error('HTTP ' + response.status); }
+      .then(function() {
         form.innerHTML = '<div style="text-align:center;padding:32px 0"><p style="color:#4ade80;font-family:Orbitron,monospace;font-size:.9rem;margin-top:16px">✓ Message envoyé !</p><p style="color:rgba(184,184,184,.6);font-size:.82rem;margin-top:8px">Nous vous répondons sous 48h.</p></div>';
       })
       .catch(function() {

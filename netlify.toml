@@ -29,4 +29,4 @@
 
     # Content Security Policy
     # 'unsafe-inline' nécessaire pour les scripts inline (animations, Lucide, etc.)
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline' https://newassets.hcaptcha.com; font-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://newassets.hcaptcha.com; img-src 'self' data: https:; connect-src 'self' https://unpkg.com https://hcaptcha.com https://*.hcaptcha.com https://synous.netlify.app; frame-ancestors 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline' https://newassets.hcaptcha.com; font-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://newassets.hcaptcha.com; img-src 'self' data: https:; connect-src 'self' https://unpkg.com https://hcaptcha.com https://*.hcaptcha.com; frame-ancestors 'self';"
