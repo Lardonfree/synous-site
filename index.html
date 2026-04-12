@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.cloudflare.com https://cdn-cgi.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.cloudflare.com https://cdn-cgi.cloudflare.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-src https://newassets.hcaptcha.com; frame-ancestors 'none'"/>
 <meta http-equiv="X-Frame-Options" content="DENY"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()"/>
@@ -592,6 +592,7 @@ footer{background:var(--wh);padding:36px 8vw;display:flex;align-items:center;jus
 }
 @keyframes blink-cursor { 50% { opacity: 0; } }
 </style>
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 <div id="cursor-dot" aria-hidden="true"></div>
@@ -877,6 +878,7 @@ footer{background:var(--wh);padding:36px 8vw;display:flex;align-items:center;jus
         <div class="fg"><label class="fl" data-i18n="fm.contact">Email ou téléphone</label><input type="text" class="fin" id="femail" name="contact" data-i18n-ph="fm.contactph" placeholder="contact@entreprise.be" required></div>
       </div>
       <div class="fg"><label class="fl" data-i18n="fm.msg">Votre besoin</label><textarea class="fin" id="fmsg" name="message" rows="3" data-i18n-ph="fm.msgph" placeholder="Ex : J'ai besoin d'automatiser ma facturation..." required></textarea></div>
+      <div class="h-captcha" data-sitekey="c320687e-e1a6-44fc-8f8e-b8c01cd4dc8a" style="margin-bottom:16px"></div>
       <button type="submit" class="bsub"><i data-lucide="send"></i><span data-i18n="fm.send">Envoyer ma demande</span></button>
     </form>
     <div class="cdir">
