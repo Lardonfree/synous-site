@@ -4,6 +4,10 @@
 #  Fonts auto-hébergées, Lucide (unpkg), vidéos YouTube/Vimeo
 # ============================================================
 
+[build]
+  publish = "."
+  command = ""
+
 [[headers]]
   for = "/*"
   [headers.values]
