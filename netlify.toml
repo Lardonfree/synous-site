@@ -1,0 +1,28 @@
+# ============================================================
+#  netlify.toml — Synoûs
+#  Security headers pour synous.be
+#  Fonts auto-hébergées, Lucide (unpkg), vidéos YouTube/Vimeo
+# ============================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Empêche le clickjacking
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Empêche le MIME sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # Force HTTPS pour 1 an
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Contrôle les infos envoyées aux sites tiers
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Désactive les fonctionnalités navigateur inutiles
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+    # Content Security Policy
+    # 'unsafe-inline' nécessaire pour les scripts inline (animations, Lucide, etc.)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self';"
